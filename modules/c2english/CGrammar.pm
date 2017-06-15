@@ -985,6 +985,7 @@ unary_expression:
           { $return = $item{postfix_expression}; }
     | '++' unary_expression
           {
+	    our $expression_count++;
             if ($arg{context} =~ /for init/) {
               $return = "pre-incrementing $item{unary_expression}";
             } elsif ($arg{context} =~ /(conditional|expression)/) {
@@ -992,15 +993,18 @@ unary_expression:
                 $return = "the pre-incremented member $item{unary_expression}";
               } elsif ($item{unary_expression} =~ s/^the element//) {
                 $return = "the pre-incremented element $item{unary_expression}";
-              }else {
-                $return = "pre-incremented $item{unary_expression}";
+              } else {
+                $return = "pre-increment $item{unary_expression}";
               }
-            } else {
-              $return = "pre-increment $item{unary_expression}";
+            } elsif (our $expression_count > 1) {
+	      $return = "pre-incremented $item{unary_expression}";
+	    } else {
+	      $return = "pre-increment $item{unary_expression}";
             }
           }
     | '--' unary_expression
           {
+	    our $expression_count++;
             if ($arg{context} =~ /for init/) {
               $return = "pre-decrementing $item{unary_expression}";
             } elsif ($arg{context} =~ /(conditional|expression)/) {
@@ -1009,10 +1013,12 @@ unary_expression:
               } elsif ($item{unary_expression} =~ s/^the element//) {
                 $return = "the pre-decremented element $item{unary_expression}";
               } else {
-                $return = "pre-decremented $item{unary_expression}";
+                $return = "pre-decrement $item{unary_expression}";
               }
+            } elsif (our $expression_count > 1) {
+	      $return = "pre-decremented $item{unary_expression}";
             } else {
-              $return = "Pre-decrement $item{unary_expression}";
+              $return = "pre-decrement $item{unary_expression}";
             }
           }
     | unary_operator cast_expression
@@ -1195,6 +1201,7 @@ postfix_productions:
           }
     | ('++')(s)
           {
+	    our $expression_count++;
             my $increment = join('',@{$item[-1]});
             if ($increment) {
               if ($arg{context} =~ /(struct access|array address)/) {
@@ -1207,6 +1214,8 @@ postfix_productions:
                 $return = ['incrementing', 'by one'];
               } elsif ($arg{context} =~ /(conditional|expression)/) {
                 $return = "post-incremented $arg{primary_expression}";
+	      } elsif (our $expression_count > 1) {
+                $return = "post-incremented $arg{primary_expression}";
               } else {
                 $return = ['increment', 'by one'];
               }
@@ -1214,6 +1223,7 @@ postfix_productions:
           }
     | ('--')(s)
           {
+	    our $expression_count++;
             my $increment = join('',@{$item[-1]});
             if ($increment) {
               if ($arg{context} =~ /(struct access|array address)/) {
@@ -1225,7 +1235,9 @@ postfix_productions:
               } elsif ($arg{context} =~ /for init/) {
                 $return = ['decrementing', 'by one'];
               } elsif ($arg{context} =~ /(conditional|expression)/) {
-               $return = "post-decremented $arg{primary_expression}";
+		$return = "post-decremented $arg{primary_expression}";
+	      } elsif (our $expression_count > 1) {
+                $return = "post-decremented $arg{primary_expression}";
               } else {
                 $return = ['decrement', 'by one'];
               }
