@@ -12727,12 +12727,12 @@ type: text
 action: /call spinach ready
 created_on: 1517171445.52532
 enabled: 1
-last_referenced_in: ##spinach
-last_referenced_on: 1517203968.28535
+last_referenced_in: #chee-fanclub
+last_referenced_on: 1518301839.22196
 owner: jp!ayy@youlosethega.me
 rate_limit: 15
-ref_count: 64
-ref_user: Tires!~Tires@cpe-172-101-20-238.maine.res.rr.com
+ref_count: 65
+ref_user: alyptik!ayy@cpe-76-173-133-37.hawaii.res.rr.com
 type: text
 
 <rules>
@@ -30078,12 +30078,12 @@ type: text
 action: /code sh echo "$@"
 created_on: 1511131423.44617
 enabled: 1
-last_referenced_in: #pbot2
-last_referenced_on: 1515176708.66473
+last_referenced_in: #chee-fanclub
+last_referenced_on: 1518301727.16051
 owner: pragma-!~chaos@unaffiliated/pragmatic-chaos
 rate_limit: 15
-ref_count: 11
-ref_user: k!~krok@unaffiliated/krok
+ref_count: 12
+ref_user: jp!ayy@youlosethega.me
 type: text
 
 <penify>
@@ -34229,12 +34229,12 @@ type: text
 action: /call list commands
 created_on: 1179674227
 enabled: 1
-last_referenced_in: ##c
-last_referenced_on: 1515821693.22603
+last_referenced_in: pbot3!stdin@localhost
+last_referenced_on: 1518301543.05887
 owner: pragma_
 rate_limit: 15
-ref_count: 53
-ref_user: Random832!~random@unaffiliated/random832
+ref_count: 54
+ref_user: pbot3!stdin@localhost
 type: text
 
 <common>
@@ -36736,12 +36736,12 @@ action: /say To learn all about me, see http://www.iso-9899.info/wiki/Candide
 action_with_args: /say To learn all about $args, see http://www.iso-9899.info/wiki/Candide#$args
 created_on: 1109792986
 enabled: 1
-last_referenced_in: [r]
-last_referenced_on: 1517202183.40361
+last_referenced_in: pbot3!stdin@localhost
+last_referenced_on: 1518301540.06079
 owner: NeverDream
 rate_limit: 0
-ref_count: 2890
-ref_user: [R]!~rbox@unaffiliated/rbox
+ref_count: 2891
+ref_user: pbot3!stdin@localhost
 type: text
 
 <herring>
@@ -39719,10 +39719,10 @@ action: /say pong
 created_on: 1109821018
 enabled: 1
 last_referenced_in: #pbot2
-last_referenced_on: 1516941337.51142
+last_referenced_on: 1518302031.29292
 owner: pragma_
 rate_limit: 15
-ref_count: 295
+ref_count: 297
 ref_user: jp!ayy@youlosethega.me
 type: text
 
@@ -44634,17 +44634,17 @@ ref_user: pragma-!~chaos@unaffiliated/pragmatic-chaos
 type: text
 
 <version>
-action: /say PBot revision 1960 2018-01-26
-created_on: 1517196773.82742
+action: /say PBot revision 1981 2018-02-09
+created_on: 1518301262.78276
 edited_by: pragma-!~chaos@unaffiliated/pragmatic-chaos
 edited_on: 1516690175.14733
 enabled: 1
 last_referenced_in: ##spinach
 last_referenced_on: 1517197014.95061
-owner: candide
+owner: pbot3
 rate_limit: 15
-ref_count: 1
-ref_user: qwename!~qwename@unaffiliated/qwename
+ref_count: 0
+ref_user: nobody
 type: text
 
 <very>
